@@ -1,0 +1,295 @@
+(* Non-primitive datatypes in Python are more complex data structures. These include collections of multiple values and can be of different types. Here are some of the key non-primitive datatypes:
+
+Lists: Ordered, mutable collections of items, e.g., [1, 2, 3, "apple", 3.14].
+
+Tuples: Ordered, immutable collections of items, e.g., (1, 2, 3, "apple", 3.14).
+
+Dictionaries: Collections of key-value pairs, e.g., {"name": "John", "age": 30}.
+
+Sets: Unordered collections of unique items, e.g., {1, 2, 3, 4}. *)
+
+# Creating a list
+fruits = ["apple", "banana", "cherry"]
+
+# Positive Indexing
+print(fruits[0])  # Output: apple
+
+# Negative Indexing
+print(fruits[-1])  # Output: cherry
+
+# Slicing
+print(fruits[1:3])  # Output: ['banana', 'cherry']
+print(fruits[:2])  # Output: ['apple', 'banana']
+print(fruits[1:])  # Output: ['banana', 'cherry']
+print(fruits[::2])  # Output: ['apple', 'cherry']
+
+# Nested List Accessing
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(nested_list[1][2])  # Output: 6
+
+# List Comprehensions
+numbers = [1, 2, 3, 4, 5]
+squares = [x**2 for x in numbers if x > 2]
+print(squares)  # Output: [9, 16, 25]
+
+# Looping Through Lists
+for fruit in fruits:
+    print(fruit)
+
+# Enumerate
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
+# Creating a list
+fruits = ["apple", "banana", "cherry"]
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+print(fruits[-1])  # Output: cherry
+
+# Slicing lists
+print(fruits[1:3])  # Output: ['banana', 'cherry']
+
+# Modifying elements
+fruits[1] = "blueberry"
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry']
+
+# Adding elements
+fruits.append("date")
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'date']
+fruits.extend(["elderberry", "fig"])
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'date', 'elderberry', 'fig']
+fruits.insert(1, "banana")
+print(fruits)  # Output: ['apple', 'banana', 'blueberry', 'cherry', 'date', 'elderberry', 'fig']
+
+# Removing elements
+fruits.remove("banana")
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'date', 'elderberry', 'fig']
+fruits.pop()
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'date', 'elderberry']
+fruits.pop(1)
+print(fruits)  # Output: ['apple', 'cherry', 'date', 'elderberry']
+fruits.clear()
+print(fruits)  # Output: []
+
+# Re-creating the list for further operations
+fruits = ["apple", "banana", "cherry"]
+
+# List methods
+print(fruits.index("banana"))  # Output: 1
+fruits.append("apple")
+print(fruits.count("apple"))  # Output: 2
+fruits.sort()
+print(fruits)  # Output: ['apple', 'apple', 'banana', 'cherry']
+fruits.sort(reverse=True)
+print(fruits)  # Output: ['cherry', 'banana', 'apple', 'apple']
+fruits.reverse()
+print(fruits)  # Output: ['apple', 'apple', 'banana', 'cherry']
+
+# List comprehension
+squares = [x**2 for x in range(10)]
+print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+#dictionaries
+
+# Creating a dictionary
+person = {"name": "Alice", "age": 25, "city": "New York"}
+
+# Accessing elements
+print(person["name"])  # Output: Alice
+print(person.get("age", 0))  # Output: 25
+print(person.get("gender", "N/A"))  # Output: N/A
+
+# Modifying elements
+person["age"] = 26
+print(person)  # Output: {'name': 'Alice', 'age': 26, 'city': 'New York'}
+person["gender"] = "Female"
+print(person)  # Output: {'name': 'Alice', 'age': 26, 'city': 'New York', 'gender': 'Female'}
+person.pop("city")
+print(person)  # Output: {'name': 'Alice', 'age': 26, 'gender': 'Female'}
+
+# Dictionary methods
+print(person.keys())  # Output: dict_keys(['name', 'age', 'gender'])
+print(person.values())  # Output: dict_values(['Alice', 26, 'Female'])
+print(person.items())  # Output: dict_items([('name', 'Alice'), ('age', 26), ('gender', 'Female')])
+person.update({"city": "New York", "profession": "Engineer"})
+print(person)  # Output: {'name': 'Alice', 'age': 26, 'gender': 'Female', 'city': 'New York', 'profession': 'Engineer'}
+person.clear()
+print(person)  # Output: {}
+
+# Re-creating the dictionary for further operations
+person = {"name": "Alice", "age": 25, "city": "New York"}
+
+# Looping through dictionaries
+for key in person.keys():
+    print(key)
+for value in person.values():
+    print(value)
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# Nested dictionaries
+students = {
+    "student1": {"name": "John", "age": 20},
+    "student2": {"name": "Jane", "age": 22},
+}
+print(students["student1"]["name"])  # Output: John
+
+
+#Tuples
+
+# Creating a tuple
+fruits = ("apple", "banana", "cherry")
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+print(fruits[-1])  # Output: cherry
+
+# Slicing tuples
+print(fruits[1:3])  # Output: ('banana', 'cherry')
+
+# Tuple methods
+print(fruits.count("apple"))  # Output: 1
+print(fruits.index("banana"))  # Output: 1
+
+# Looping through a tuple
+for fruit in fruits:
+    print(fruit)
+
+# Nested tuples
+nested_tuple = ((1, 2, 3), ("apple", "banana", "cherry"))
+print(nested_tuple[1][2])  # Output: cherry
+
+# Packing and unpacking tuples
+coordinates = (10, 20, 30)
+x, y, z = coordinates
+print(x, y, z)  # Output: 10 20 30
+
+
+#sets
+
+# Creating a set
+fruits = {"apple", "banana", "cherry"}
+
+# Adding elements
+fruits.add("date")
+print(fruits)  # Output: {'apple', 'banana', 'cherry', 'date'}
+fruits.update(["elderberry", "fig"])
+print(fruits)  # Output: {'apple', 'banana', 'cherry', 'date', 'elderberry', 'fig'}
+
+# Removing elements
+fruits.remove("banana")
+print(fruits)  # Output: {'apple', 'cherry', 'date', 'elderberry', 'fig'}
+fruits.discard("banana")
+print(fruits)  # Output: {'apple', 'cherry', 'date', 'elderberry', 'fig'}
+fruit = fruits.pop()
+print(fruit)  # Output: apple (or another random element)
+print(fruits)  # Output: remaining elements
+fruits.clear()
+print(fruits)  # Output: set()
+
+# Re-creating the set for further operations
+fruits = {"apple", "banana", "cherry"}
+
+# Set operations
+set1 = {"apple", "banana", "cherry"}
+set2 = {"cherry", "date", "elderberry"}
+combined_set = set1.union(set2)
+print(combined_set)  # Output: {'apple', 'banana', 'cherry', 'date', 'elderberry'}
+common_set = set1.intersection(set2)
+print(common_set)  # Output: {'cherry'}
+diff_set = set1.difference(set2)
+print(diff_set)  # Output: {'apple', 'banana'}
+sym_diff_set = set1.symmetric_difference(set2)
+print(sym_diff_set)  # Output: {'apple', 'banana', 'date', 'elderberry'}
+
+# Checking subset and superset
+is_subset = {"apple", "banana"}.issubset(set1)
+print(is_subset)  # Output: True
+is_superset = set1.issuperset({"apple", "banana"})
+print(is_superset)  # Output: True
+
+
+#strings
+
+# Creating a string
+text = "Hello, World!"
+
+# Accessing elements
+print(text[0])  # Output: H
+print(text[-1])  # Output: !
+
+# Slicing strings
+print(text[0:5])  # Output: Hello
+
+# String methods
+print(text.lower())  # Output: hello, world!
+print(text.upper())  # Output: HELLO, WORLD!
+print(text.capitalize())  # Output: Hello, world!
+print(text.title())  # Output: Hello, World!
+
+text_with_spaces = "   Hello, World!   "
+print(text_with_spaces.strip())  # Output: Hello, World!
+
+print(text.replace("World", "Python"))  # Output: Hello, Python!
+print(text.split(","))  # Output: ['Hello', ' World!']
+
+words = ["Hello", "Python", "World"]
+print(" ".join(words))  # Output: Hello Python World
+
+# String formatting
+name = "Alice"
+age = 25
+print(f"Name: {name}, Age: {age}")  # Output: Name: Alice, Age: 25
+print("Name: {}, Age: {}".format(name, age))  # Output: Name: Alice, Age: 25
+print("Name: %s, Age: %d" % (name, age))  # Output: Name: Alice, Age: 25
+
+
+#conversions from one datatype to other
+
+# Integer conversion
+num_str = "123"
+num = int(num_str)
+print(num)  # Output: 123
+
+# Float conversion
+num_str = "123.45"
+num = float(num_str)
+print(num)  # Output: 123.45
+
+# String conversion
+num = 123
+num_str = str(num)
+print(num_str)  # Output: "123"
+
+# List to set
+num_list = [1, 2, 2, 3, 4]
+num_set = set(num_list)
+print(num_set)  # Output: {1, 2, 3, 4}
+
+# Set to list
+num_set = {1, 2, 3, 4}
+num_list = list(num_set)
+print(num_list)  # Output: [1, 2, 3, 4]
+
+# List to tuple
+num_list = [1, 2, 3]
+num_tuple = tuple(num_list)
+print(num_tuple)  # Output: (1, 2, 3)
+
+# Tuple to list
+num_tuple = (1, 2, 3)
+num_list = list(num_tuple)
+print(num_list)  # Output: [1, 2, 3]
+
+# Dictionary keys and values to list
+person = {"name": "Alice", "age": 25}
+keys_list = list(person.keys())
+values_list = list(person.values())
+print(keys_list)  # Output: ['name', 'age']
+print(values_list)  # Output: ['Alice', 25]
+
+# List to string
+words = ["Hello", "World"]
+sentence = " ".join(words)
+print(sentence)  # Output: "Hello World"
