@@ -1,0 +1,105 @@
+(* Pandas is a powerful library in Python used for data manipulation and analysis. 
+It provides data structures like Series and DataFrame to handle and analyze data efficiently. Here's an overview of some of the key features and functionalities of Pandas: *)
+
+import pandas as pd
+
+# Creating a DataFrame
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35],
+    "City": ["New York", "Los Angeles", "Chicago"]
+}
+df = pd.DataFrame(data)
+print(df)
+
+# Reading from a CSV file
+# df = pd.read_csv("data.csv")
+
+# Viewing the first few rows
+print(df.head())
+
+# Viewing summary statistics
+print(df.describe())
+
+# Selecting columns
+print(df["Name"])
+
+# Filtering rows
+print(df[df["Age"] > 30])
+
+# Handling missing values
+# df.dropna(inplace=True)  # Drop rows with missing values
+# df.fillna(0, inplace=True)  # Fill missing values with 0
+
+# Grouping data
+grouped = df.groupby("City")
+print(grouped.mean())
+
+# Merging DataFrames
+df1 = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
+df2 = pd.DataFrame({"A": [1, 2, 3], "C": [7, 8, 9]})
+merged_df = pd.merge(df1, df2, on="A")
+print(merged_df)
+
+
+Data Inspection
+df.head(): Returns the first few rows.
+
+df.tail(): Returns the last few rows.
+
+df.info(): Provides a concise summary.
+
+df.describe(): Generates summary statistics.
+
+Data Selection
+df.loc[]: Access a group of rows and columns by labels.
+
+df.iloc[]: Access a group of rows and columns by integer positions.
+
+df.at[]: Access a single value by row/column labels.
+
+df.iat[]: Access a single value by row/column positions.
+
+Data Manipulation
+df.assign(): Assign new columns to a DataFrame.
+
+df.drop(): Drop specified labels from rows or columns.
+
+df.sort_values(): Sort by values.
+
+df.sort_index(): Sort by index.
+
+Data Cleaning
+df.isnull(): Detect missing values.
+
+df.dropna(): Remove missing values.
+
+df.fillna(): Fill missing values.
+
+df.replace(): Replace values with others.
+
+Data Aggregation
+df.groupby(): Group DataFrame using a mapper or by a Series of columns.
+
+df.agg(): Aggregate using one or more operations.
+
+df.apply(): Apply a function along an axis of the DataFrame.
+
+df.transform(): Apply a function element-wise.
+
+Data Merging
+pd.merge(): Merge DataFrame or named Series objects.
+
+df.join(): Join columns with another DataFrame.
+
+pd.concat(): Concatenate pandas objects.
+
+Input/Output
+pd.read_csv(): Read a comma-separated values (csv) file into DataFrame.
+
+df.to_csv(): Write DataFrame to a comma-separated values (csv) file.
+
+pd.read_excel(): Read an Excel file into a DataFrame.
+
+df.to_excel(): Write DataFrame to an Excel file.
+
